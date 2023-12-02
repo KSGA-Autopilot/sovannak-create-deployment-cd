@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: sovannak-create-deployment
-          image: kshrdautopilot/sovannak-create-deployment
+          image: kshrdautopilot/sovannak-create-deployment:2023-12-02-05-52-45
           ports:
             - containerPort: 3000
