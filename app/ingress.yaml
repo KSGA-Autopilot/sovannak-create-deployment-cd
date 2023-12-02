@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: sovannak-create-deployment-ingress
+  namespace: sovannak
+spec:
+  tls:
+    - hosts:
+        - autopilot14.hanyeaktong.site
+      secretName: autopilot14-hanyeaktong-site-cert
+  rules:
+    - host: autopilot14.hanyeaktong.site
+      http:
+        paths:
+          - pathType: Prefix
+            path: /
+            backend:
+              service:
+                name: sovannak-create-deployment-svc
+                port:
+                  number: 3000
