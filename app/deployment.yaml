@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sovannak-create-deployment-deployment
+  labels:
+    app: sovannak-create-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: sovannak-create-deployment
+  template:
+    metadata:
+      labels:
+        app: sovannak-create-deployment
+    spec:
+      containers:
+        - name: sovannak-create-deployment
+          image: kshrdautopilot/sovannak-create-deployment
+          ports:
+            - containerPort: 3000
